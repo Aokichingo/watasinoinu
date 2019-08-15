@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+
+
+
+ <div class="post">
+   
+
+    <% @tasks.each do |task| %>
+ <div class="image">
+     
+        <%= task.name %>
+        <%= task.body %>
+       
+       <%= image_tag task.image.to_s , :class =>"image"%>
+    
+  </div>   
+        <%= link_to 'Show', task %>
+        <%= link_to 'Edit', edit_task_path(task) %>
+        <%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %>
+      
+     <% end %>
+ 
+ </div> 
+
+
+<h2 class="btn btn-warning btn-lg text-white"><%= link_to "新規投稿", new_task_path %></h2>
